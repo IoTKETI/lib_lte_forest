@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-import json, sys, serial, threading
+import json
+import os
+import serial
+import signal
+import sys
+
 import paho.mqtt.client as mqtt
-import os, signal
 
 i_pid = os.getpid()
 argv = sys.argv
@@ -139,8 +143,8 @@ def missionPortData():
                     data_dict['Carrier'] = 'SKT'
                 elif 'Cell ID' in data_keys:
                     data_dict['Carrier'] = 'LGU'
-            print(data_dict['Carrier'])
-            print(data_dict)
+            # print(data_dict['Carrier'])
+            # print(data_dict)
         else:
             pass
 

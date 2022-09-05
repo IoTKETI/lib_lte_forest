@@ -156,8 +156,6 @@ def missionPortData():
 
 
 if __name__ == '__main__':
-    global missionPort
-
     my_lib_name = 'lib_lgu_lte'
 
     try:

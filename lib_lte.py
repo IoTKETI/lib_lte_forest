@@ -156,7 +156,7 @@ def missionPortData():
 
 
 if __name__ == '__main__':
-    my_lib_name = 'lib_lgu_lte'
+    my_lib_name = 'lib_lte'
 
     try:
         lib = dict()
@@ -191,4 +191,4 @@ if __name__ == '__main__':
     while True:
         missionPortData()
 
-# python -m PyInstaller lib_lgu_lte.py
+# python -m PyInstaller lib_lte.py

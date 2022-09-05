@@ -114,7 +114,7 @@ def missionPortData():
         if (end_data == 'OK'):
             data_arr = missionStr[1].decode().split(',')
 
-            data_dict = dict()
+            lteQ = dict()
             for d in data_arr:
                 d_arr = d.split(':')
                 if d_arr[0] == '@DBG':
@@ -127,24 +127,24 @@ def missionPortData():
                 if ' ' == key[0]:
                     key = key[1:]
 
-                data_dict[key] = value
+                lteQ[key] = value
 
-            data_keys = list(data_dict.keys())
+            data_keys = list(lteQ.keys())
             if 'Bandwidth' in data_keys:
-                data_dict['Carrier'] = 'KT'
+                lteQ['Carrier'] = 'KT'
             elif 'MSISDN' in data_keys:
-                data_dict['Carrier'] = 'SKT'
+                lteQ['Carrier'] = 'SKT'
             elif 'Frequency' in data_keys:
-                data_dict['Carrier'] = 'LGU'
+                lteQ['Carrier'] = 'LGU'
             else:
                 if 'Cell-ID' in data_keys:
-                    data_dict['Carrier'] = 'KT'
+                    lteQ['Carrier'] = 'KT'
                 elif 'Cell(PCI)' in data_keys:
-                    data_dict['Carrier'] = 'SKT'
+                    lteQ['Carrier'] = 'SKT'
                 elif 'Cell ID' in data_keys:
-                    data_dict['Carrier'] = 'LGU'
-            # print(data_dict['Carrier'])
-            # print(data_dict)
+                    lteQ['Carrier'] = 'LGU'
+            # print(lteQ['Carrier'])
+            # print(lteQ)
         else:
             pass
 
@@ -195,4 +195,4 @@ if __name__ == '__main__':
     while True:
         missionPortData()
 
-# python -m PyInstaller lib_lte.py
+# python3 -m PyInstaller -F lib_lte.py

@@ -180,7 +180,8 @@ if __name__ == '__main__':
     lib['serialPortNum'] = argv[1]
     lib['serialBaudrate'] = argv[2]
 
-    msw_mqtt_connect(host='localhost')
+    broker_ip = 'localhost'
+    msw_mqtt_connect(host=broker_ip)
 
     missionPort = None
     missionPortNum = lib["serialPortNum"]

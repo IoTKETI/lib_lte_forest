@@ -111,7 +111,7 @@ def missionPortData():
 
         end_data = (missionStr[-1].decode('utf-8'))[:-2]
 
-        if (end_data == 'OK'):
+        if end_data == 'OK':
             data_arr = missionStr[1].decode().split(',')
 
             lteQ = dict()
@@ -122,7 +122,10 @@ def missionPortData():
                     value = d_arr[2]
                 else:
                     key = d_arr[0]
-                    value = d_arr[1]
+                    if '\r\n' in d_arr[1]:
+                        value = d_arr[1].replace('\r\n', '')
+                    else:
+                        value = d_arr[1]
 
                 if ' ' == key[0]:
                     key = key[1:]

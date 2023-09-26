@@ -1,4 +1,4 @@
-# lib_lte
+# lib_lte_forest
 sparrow 보드에 장착된 통신 3사 LTE 모듈의 LTE 품질을 측정하는 라이브러리 프로세스
 
 ## Install dependencies
@@ -20,5 +20,5 @@ $ pip3 install -r requirements.txt
 
 ### Convert execute file
 ```
-$ python3 -m PyInstaller lib_lte.py
+$ python3 -m PyInstaller lib_lte_forest.py
 ```

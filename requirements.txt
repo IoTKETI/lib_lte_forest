@@ -4,5 +4,4 @@ paho-mqtt==1.6.1
 pefile==2022.5.30
 pyinstaller>=4.10
 pyinstaller-hooks-contrib==2022.0
-pyserial==3.5
 pywin32-ctypes==0.2.0

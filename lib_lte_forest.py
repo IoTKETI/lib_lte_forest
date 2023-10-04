@@ -106,6 +106,7 @@ def missionPortData(response):
         lteQ['LTE_MODE'] = data_arr[6]
         lteQ['PCI'] = data_arr[7]
         lteQ['USIM'] = data_arr[8]
+        lteQ['Carrier'] = 'SKT'
 
         data_topic = '/MUV/data/' + lib["name"] + '/' + lib["data"][0]
         lteQ = json.dumps(lteQ)
